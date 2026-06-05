@@ -1,0 +1,13 @@
+{
+  "name": "facerecog-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "setup": "node download-models.js && cd backend && npm install && cd ../frontend && npm install",
+    "download-models": "node download-models.js",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build:frontend": "cd frontend && npm run build",
+    "migrate": "cd backend && npm run migrate"
+  }
+}
