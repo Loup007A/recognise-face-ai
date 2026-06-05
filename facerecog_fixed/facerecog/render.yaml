@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: facerecog-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install && npm run migrate
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: facerecog-db
+          property: connectionString
+      - key: ALLOWED_ORIGINS
+        sync: false
+
+databases:
+  - name: facerecog-db
+    databaseName: facerecog
+    user: facerecog
