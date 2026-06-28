@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: facerecog-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install && npm run migrate
+    startCommand: npm start
+    healthCheckPath: /api/health
+    disk:
+      name: facerecog-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SQLITE_DATA_DIR
+        value: /var/data
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: WEBAUTHN_RP_ID
+        sync: false
+      - key: WEBAUTHN_ORIGIN
+        sync: false
