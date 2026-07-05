@@ -1,7 +1,7 @@
 [URL]
 https://recognise-face-ai.onrender.com/
 [DESCRIPTION]
-Un site multijoueur où tout le monde croit jouer au même jeu — mais chaque joueur a une version unique générée procéduralement.
+Un site qui enregistre des données fournies par l'utilisateur permettant de le reconnaitre.
 [LANGAGE]
 HTML
 [NOM]
